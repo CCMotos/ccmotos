@@ -1,0 +1,289 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif; /* Tipo de letra Poppins */
+    background-color: #f0f2f5; /* Color de fondo claro */
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    background-color: #fff9e6; /* Color oscuro para el sidebar */
+    color: #7d7d7d;
+    padding: 35px;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+}
+
+.sidebar h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #ffbf00; /* Color similar al amarillo */
+}
+
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Uso de flexbox */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten a múltiples líneas */
+    gap: 20px; /* Espaciado entre elementos */
+    justify-content: center; /* Centrado horizontal */
+}
+
+.category-list li {
+    position: relative; /* Necesario para las animaciones */
+    background-color: #fff;
+    padding: 20px 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Animación suave */
+    cursor: pointer; /* Indicador de interactividad */
+    overflow: hidden; /* Oculta contenido fuera del borde */
+}
+
+.category-list li:hover {
+    transform: translateY(-10px) rotate(-2deg); /* Movimiento dinámico */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Mayor sombra */
+}
+
+.category-list li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 191, 0, 0.3), rgba(255, 191, 0, 0));
+    transform: skewX(-25deg);
+    transition: transform 0.5s ease;
+    z-index: 0; /* Coloca la animación detrás del contenido */
+}
+
+.category-list li:hover::before {
+    transform: translateX(150%) skewX(-25deg); /* Movimiento del gradiente */
+}
+
+.category-list li a {
+    position: relative;
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    z-index: 1; /* Asegura que el texto quede encima */
+    transition: color 0.3s ease; /* Transición para el color */
+}
+
+.category-list li a:hover {
+    color: #ffbf00; /* Cambia el color del texto en hover */
+}
+
+/* Estilo para la caja de opciones */
+.select-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.select-wrapper select {
+    width: 100%;
+    padding: 20px 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Animación suave */
+    appearance: none; /* Elimina el estilo predeterminado del navegador */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23333" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>'); /* Flecha personalizada */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+}
+
+.select-wrapper select:hover {
+    transform: translateY(-10px) rotate(-2deg); /* Movimiento dinámico */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Mayor sombra */
+}
+
+.select-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 191, 0, 0.3), rgba(255, 191, 0, 0));
+    transform: skewX(-25deg);
+    transition: transform 0.5s ease;
+    z-index: 0; /* Coloca la animación detrás del contenido */
+}
+
+.select-wrapper:hover::before {
+    transform: translateX(150%) skewX(-25deg); /* Movimiento del gradiente */
+}
+
+/* Main content */
+.main-content {
+    flex-grow: 1;
+    padding: 2rem;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.header h2 {
+    font-size: 2rem;
+    color: #333;
+    margin: 0;
+}
+
+.profile-cart-container {
+    position: fixed; /* Para fijarlo en la ventana */
+    bottom: 20px;    /* Margen desde la parte inferior */
+    right: 10px;     /* Margen desde la parte derecha */
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en una columna */
+    gap: 10px; /* Espacio entre los elementos */
+    background-color: #7268682f; /* Color de fondo (opcional) */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados (opcional) */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra (opcional) */
+}
+
+.profile-cart-container div {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espacio entre el icono y el texto */
+}
+
+.profile-cart-container img {
+    border-radius: 15%; /* Opcional: hace los íconos circulares */
+}
+
+.profile, .cart, .logout {
+    background-color: #2c3e50; /* Color oscuro para los botones */
+    color: #fff;
+    padding: 13px 20px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.profile a, .cart a, .logout a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.profile:hover, .cart:hover, .logout:hover {
+    background-color: #ffbf00; /* Hover amarillo */
+}
+
+/* Contenedor de productos */
+.products-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.scroll-container {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    max-height: 400px;
+    padding: 0 1rem;
+}
+
+.scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background: #d4a017; /* Color amarillo para el scrollbar */
+    border-radius: 4px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background: #f4f4f4;
+}
+
+.scroll-button {
+    background-color: #ffbf00; /* Color amarillo */
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.3s;
+}
+
+.scroll-button.left {
+    left: 0.5rem;
+}
+
+.scroll-button.right {
+    right: 0.5rem;
+}
+
+.scroll-button:hover {
+    background-color: #274211; /* Hover más oscuro */
+}
+
+/* Estilo de las tarjetas de productos */
+.product-card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    flex: 0 0 auto;
+    width: 220px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.product-card {
+    width: 220px; /* Ajusta el tamaño de la carta del producto */
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    flex: 0 0 auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    width: 100%; /* La imagen ocupará todo el ancho de la carta */
+    height: auto; /* Mantendrá la proporción de la imagen */
+    max-height: 150px; /* Ajusta la altura máxima según sea necesario */
+    object-fit: cover; /* Ajusta la imagen para que cubra el contenedor */
+    border-radius: 5px;
+}

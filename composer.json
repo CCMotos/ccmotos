@@ -1,0 +1,9 @@
+{
+    "name": "myvendor/mypackage",
+    "description": "Proyecto para generar códigos de barras en PHP en proyceto C&C M para referencias de pago.",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "picqer/php-barcode-generator": "^3.2"
+    }
+}

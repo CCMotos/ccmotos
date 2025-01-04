@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio Vendedor</title>
+    <link rel="stylesheet" href="style_vendedor.css">
+    <link rel="icon" href="logo.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Barra lateral con el menú de categorías -->
+        <aside class="sidebar">
+            <h3>Categorías</h3>
+            <ul class="category-list">
+                <li><a href="#">Motocicletas</a>
+                    <!-- Submenú para Motocicletas -->
+                    <ul class="submenu">
+                        <li><a href="#">Deportivas</a></li>
+                        <li><a href="#">Cruiser</a></li>
+                        <li><a href="#">Off-road</a></li>
+                        <li><a href="#">Scooters</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Accesorios</a></li>
+                <li><a href="#">Ropa</a></li>
+            </ul>
+        </aside>
+
+        <!-- Área principal de productos -->
+        <main class="main-content">
+            <div class="header">
+                <h2>Bienvenido, [Nombre del Vendedor]</h2>
+                <div class="profile">
+                    <a href="perfil_vendedor.html">Perfil</a>
+                </div>
+                <div class="cart">
+                    <a href="carrito.html">Carrito (0)</a>
+                </div>
+            </div>
+            
+            <div class="products">
+                <div class="product-card">
+                    <img src="moto.jpg" alt="Motocicleta">
+                    <h4>Motocicleta X</h4>
+                    <p>Precio: $5000</p>
+                    <button class="add-to-cart">Agregar al Carrito</button>
+                </div>
+                <!-- Más productos dinámicamente -->
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,157 @@
+/* carrito1.css */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.logo-container img {
+    width: 120px;
+}
+
+h2 {
+    margin: 0;
+    color: #333;
+    font-size: 24px;
+}
+
+.cart-container {
+    margin-top: 20px;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.cart-table th, .cart-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.cart-table th {
+    background-color: #f8f8f8;
+    color: #555;
+}
+
+.product-image {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.cart-summary {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+}
+
+.summary-details {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-top: 1px solid #e0e0e0;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.summary-row span {
+    width: 50%;
+}
+
+.summary-row.total {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.cliente-form, #facturacion-form {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+}
+
+.cliente-form h3, #facturacion-form h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.cliente-form label, #facturacion-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.cliente-form input, #facturacion-form input, .styled-select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.styled-select {
+    appearance: none;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="none" stroke="currentColor" stroke-width=".5" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 8px 10px;
+}
+
+.search-btn, .facturar-btn, .remove-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-btn:hover, .facturar-btn:hover, .remove-btn:hover {
+    background-color: #0056b3;
+}
+
+.message {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #e9ecef;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.found-client p {
+    margin: 5px 0;
+    color: #333;
+}

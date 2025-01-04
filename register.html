@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="style_register.css">
+    <link rel="icon" href="logo.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <script>
+        function showLoadingMessage() {
+            document.getElementById("loading-message").style.display = "block";
+            document.getElementById("loading-spinner").style.display = "block";
+            setTimeout(function() {
+                window.location.href = "inicio_ventas.php";
+            }, 4000);
+        }
+    </script>
+</head>
+<body>
+    <?php
+        session_start();
+        $error_message = isset($_SESSION['error_message']) ? $_SESSION['error_message'] : '';
+        $success_message = isset($_SESSION['success_message']) ? $_SESSION['success_message'] : '';
+        // Limpiar mensajes de sesión
+        unset($_SESSION['error_message']);
+        unset($_SESSION['success_message']);
+    ?>
+    
+    <div class="logo-floating">
+        <img src="logo_gif.gif" alt="Logo Animado" class="logo">
+    </div>
+    
+    <div class="login-container">
+        <h2>Registro de Usuario</h2>
+        
+        <div class="message-container">
+            <!-- Mensajes de error y éxito se mostrarán aquí -->
+            <?php if (!empty($error_message)) : ?>
+                <div class="error-message">
+                    <strong>Error:</strong> <?php echo htmlspecialchars($error_message); ?>
+                </div>
+            <?php endif; ?>
+            
+            <?php if (!empty($success_message)) : ?>
+                <div class="success-message">
+                    <strong>Éxito:</strong> <?php echo htmlspecialchars($success_message); ?>
+                </div>
+                <script>showLoadingMessage();</script>
+            <?php endif; ?>
+        </div>
+        
+        <div id="loading-message" style="display: none; color: #d4a017; font-size: 1.1em;">
+            Procesando su registro, por favor espere...
+        </div>
+        <div id="loading-spinner" class="spinner" style="display: none;"></div>
+        
+        <form action="register.php" method="POST">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="tipo_usuario">Tipo de Usuario</label>
+                    <select id="tipo_usuario" name="tipo_usuario" required>
+                        <option value="inventariado">Inventariado</option>
+                        <option value="vendedor">Vendedor</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" id="telefono" name="telefono" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="id_sucursal">ID Sucursal</label>
+                    <input type="number" id="id_sucursal" name="id_sucursal" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="codigo_seguridad">Código de Seguridad</label>
+                    <input type="text" id="codigo_seguridad" name="codigo_seguridad" required>
+                </div>
+            </div>
+
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+</body>
+</html>
